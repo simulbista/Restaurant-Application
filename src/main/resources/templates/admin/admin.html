@@ -13,16 +13,15 @@
 	<div class="content">
 		<div class="color-bg-primary text-white jumbotron">
 			<h1>
-				Welcome to <span th:text="${restaurantName}"></span>
+				Welcome to Admin Portal!
 			</h1>
 		</div>
 		<div class="container">
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
-					<h5 class="card-title">Menu</h5>
-					<p class="card-text">See the savory menu we server at humber
-						eats!</p>
-					<a th:href="@{/restaurant/menu}" class="btn btn-success">Menu</a>
+					<h5 class="card-title">Add Menu Item</h5>
+					<p class="card-text">Use this page to add menu items.</p>
+					<a th:href="@{/restaurant/admin/add}" class="btn btn-success">Add Item</a>
 				</div>
 			</div>
 		</div>

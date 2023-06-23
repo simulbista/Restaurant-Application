@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.humber.j2ee.services.DishService;
 
@@ -32,8 +33,12 @@ public class DishMVCController {
 		
 		@GetMapping("/menu")
 //		model is passing values to the html file where it is read by thymeleaf
-		public String menu(Model model) {
+		//the request param might be there (if it is coming from adding a dish by the admin) - so requried=false
+		// as it might not be there if it is coming from somewhere else
+		public String menu(Model model, 
+				@RequestParam(required=false) String success) {
 			model.addAttribute("restaurantName",name);
+			model.addAttribute("success",success);
 			model.addAttribute("dishes",dishService.getDishes());
 			return "menu";
 		}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Restaurant Application</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div class="content">
+		<div th:include="@{fragments/navbar}"></div>
+		<div class="container" style="padding-top: 2rem;">
+			<h3>Add-Item</h3>
+		</div>
+		<!-- th:action redirects after post of the form -->
+		<!-- th:object is form binding i.e. stores the submission of the form in an object and sends it -->
+		<form th:action="@{/restaurant/admin/add}" method="POST"
+		th:object="${item}" style="padding: 0 5em 5em 5em;">
+			<div class="form-group">
+			<!--  th:field is used to map the field to the object (Dish) in the backend -->
+				<label for="name">Name</label> <input type="text" th:field="*{name}"
+					class="form-control" id="name" placeholder="Enter Name" required="required">
+			</div>
+			<div class="form-group">
+				<label for="cuisine">Cuisine</label> <input type="text" th:field="*{cuisine}"
+					class="form-control" id="cuisine" placeholder="Enter Cuisine" required="required">
+			</div>
+
+			<div class="form-group">
+				<label for="category">Category</label> <input type="text" th:field="*{description}"
+					class="form-control" id="category" placeholder="Enter Category">
+			</div>
+
+			<div class="form-group">
+				<label for="description">Description</label>
+				<textarea class="form-control" id="description" th:field="*{category}"
+					rows="3"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		<footer th:include="@{fragments/footer}"></footer>
+	</div>
+</body>
+</html>

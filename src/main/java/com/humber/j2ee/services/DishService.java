@@ -24,5 +24,15 @@ public class DishService {
 //	public Optional<Dish> findDishByName(String name) {
 //		return this.dishRepository.findById(1)
 //	}
+	
+	//add dish
+	public void addDish(Dish dish) {
+		this.dishRepository.save(dish);
+	}
+	
+	//delete dish by id
+	public void deleteDish(int id) {
+		dishRepository.deleteById(id);
+	}
 
 }
