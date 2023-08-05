@@ -9,6 +9,6 @@ public class MyErrorController implements ErrorController{
 	
     @GetMapping("/error")
     public String handleError() {
-        return "auth/error404";
+        return "auth/error403";
     }
 }
