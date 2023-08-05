@@ -1,40 +1,83 @@
 /*primary bg color for the portal*/
-.color-bg-primary{
+.color-bg-primary {
 	background-color: #5C8984;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
-footer{
-	margin-top:auto;
+footer {
+	margin-top: auto;
 }
 
-.sub-footer{
-	min-height:12vh;
-	display:flex;
+.sub-footer {
+	min-height: 12vh;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
 /*removing curved border of jumbotron class of bootstrap4*/
 .jumbotron {
-  border-radius: 0;
+	border-radius: 0;
 }
 
-.container-table{
-	padding-top:50px;
+.container-table {
+	padding-top: 50px;
 }
 
-.table-header{
+.table-header {
 	color: white;
 	background-color: #5C8984;
 	text-align: center;
 }
 
-td{
+td {
 	text-align: center;
+}
+
+.login {
+	width: 600px;
+	padding: 100px;
+	margin: 0 auto;
+}
+
+.login-title {
+	margin: 40px 0;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+/*404 not found page css */
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f8f9fa;
+}
+
+.error-container {
+	text-align: center;
+}
+
+.error-heading {
+	font-size: 48px;
+	font-weight: bold;
+	color: #dc3545;
+}
+
+.error-message {
+	font-size: 24px;
+	color: #6c757d;
+	margin-top: 20px;
+}
+
+.error-image {
+	margin-top: 10px;
+	max-width: 40%;
+	height: auto;
 }

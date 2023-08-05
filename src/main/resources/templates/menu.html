@@ -13,7 +13,6 @@
 	<div class="content">
 		<div th:include="@{fragments/navbar}"></div>
 		<div class="container container-table">
-
 			<div class="alert alert-success" role="alert" th:if="${success}"
 				th:text="${success}"></div>
 			<!-- if thymeleaf - display Menu Items as title if more than 1 dishes else display Menu Item -->
@@ -32,15 +31,19 @@
 						<th scope="col">Category</th>
 						<th scope="col">Cuisine</th>
 						<th scope="col">Description</th>
+						<th scope="col">Price</th>
 						<th scope="col">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="dish : ${dishes}">
 						<td scope="row" th:text="${dish.name}"></td>
-						<td scope="row" th:text="${dish.category}"></td>
-						<td scope="row" th:text="${dish.cuisine}"></td>
+						<td scope="row"><span th:text="${dish.category.name}"
+							th:style="'color:'  + ${dish.category.color}"></span>
+						</td>
+						<td scope="row" th:text="${dish.cuisine.cuisineName}"></td>
 						<td scope="row" th:text="${dish.description}"></td>
+						<td scope="row" th:text="${dish.price}"></td>
 						<!-- deleted the dish record -->
 						<td scope="row"><a
 							th:href="@{/restaurant/admin/delete/{id}(id=${dish.id})}"
